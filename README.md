@@ -1,8 +1,8 @@
 ![Smart Logo](smart-logo.png)
 #
-#Ruby Developer Test
+##Ruby Developer Test
 
-#####Application parses log file and filtering pages by most views, uniq views. It:
+Application parses log file and filtering pages by most views, uniq views. It:
 
 * Use OOP principles;
 * Use Rspec for testing;
