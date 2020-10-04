@@ -19,7 +19,7 @@ module Parser
     end
 
     def validate!
-      ip_address && page || raise(InvalidRow, "Row: #{@row} is invalid!")
+      ip_address && page || raise(InvalidRow, "Invalid row: #{@row}")
     end
 
     private

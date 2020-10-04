@@ -42,7 +42,7 @@ RSpec.describe Parser::Print do
       it 'returns errors' do
         allow_any_instance_of(Parser::LogFile).to receive_messages(errors: ['Very important message'])
 
-        expect { parser.print_errors }.to output("Very important message\n").to_stdout
+        expect { parser.print_errors }.to output('Very important message').to_stdout
       end
     end
   end

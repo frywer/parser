@@ -33,7 +33,7 @@ RSpec.describe Parser::LogFile do
       it 'returns Rows' do
         log_file.parse
         expect(log_file.views.count).to eq 1
-        expect(log_file.errors).to eq ["Row: /about/2\n is invalid!"]
+        expect(log_file.errors).to eq ["Invalid row: /about/2\n"]
       end
     end
   end

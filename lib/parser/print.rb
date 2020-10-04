@@ -23,7 +23,7 @@ module Parser
 
     def print_errors
       @log_file.errors.each do |error|
-        print "#{error}\n"
+        print error
       end
     end
 
