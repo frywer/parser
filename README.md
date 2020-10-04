@@ -30,6 +30,10 @@ $ rspec /spec/parser/log_file_spec.rb:20
 ```bash
 $ rubocop
 ```
+* running all together (rspec&rubocop)
+```bash
+$ rake tests
+```
 
 ## Getting started
 
@@ -54,6 +58,11 @@ $ ruby ./parser.rb webserver.log
 The first argument is optional and you can skip it. Default path is APP/ROOT/webserver.log
 ```
 $ ruby ./parser.rb
+```
+Alternative way running script is using rake command:
+
+```
+$ rake parse path=webserver.log
 ```
 
 Output of valid file:
