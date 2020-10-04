@@ -1,5 +1,6 @@
 ![Smart Logo](smart-logo.png)
 #
+
 ##Ruby Developer Test
 
 Application parses log file and filtering pages by most views, uniq views. It:
