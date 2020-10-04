@@ -11,5 +11,13 @@ module Parser
     def uniq_views
       @views.uniq(&:ip_address)
     end
+
+    def count
+      @views.count
+    end
+
+    def uniq_count
+      uniq_views.count
+    end
   end
 end

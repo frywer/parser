@@ -53,4 +53,18 @@ RSpec.describe Parser::LogFile do
       end
     end
   end
+
+  describe '#pages' do
+    let(:log_file_rows) do
+      ["/about 802.683.925.780\n",
+       "/about 802.683.925.780\n",
+       "/about/2 543.910.244.929\n",
+       "/about 543.910.244.929\n"]
+    end
+
+    it 'returns pages count' do
+      log_file.parse
+      expect(log_file.pages.count).to eq 2
+    end
+  end
 end

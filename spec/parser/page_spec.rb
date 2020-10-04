@@ -12,8 +12,20 @@ RSpec.describe Parser::Page do
   let(:page) { described_class.new('/about', views) }
 
   describe '#uniq_views' do
-    it 'returns uniq views count' do
-      expect(page.uniq_views.count).to eq 2
+    it 'returns uniq views views' do
+      expect(page.uniq_views.map(&:ip_address)).to match_array ['802.683.925.780', '336.284.013.698']
+    end
+  end
+
+  describe '#uniq_count' do
+    it 'returns uniq views uniq count' do
+      expect(page.uniq_count).to eq 2
+    end
+  end
+
+  describe '#count' do
+    it 'returns uniq views uniq count' do
+      expect(page.count).to eq 3
     end
   end
 end
