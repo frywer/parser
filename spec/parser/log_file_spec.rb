@@ -12,7 +12,7 @@ RSpec.describe Parser::LogFile do
       it 'return true' do
         allow(File).to receive(:exist?).and_return(true)
 
-        expect { log_file.file_exist? }.not_to raise_error(Parser::LogFile::FileMissing)
+        expect { log_file.file_exist? }.not_to raise_error
       end
     end
 
