@@ -3,6 +3,8 @@
 module Parser
   # Initialize Page object
   class Page
+    attr_reader :name
+
     def initialize(name, views)
       @name = name
       @views = views

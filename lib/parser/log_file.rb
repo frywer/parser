@@ -34,13 +34,5 @@ module Parser
                  .group_by(&:page)
                  .map { |page, views| Page.new(page, views) }
     end
-
-    # def sorted_pages
-    #   pages.sort_by(&:count)
-    # end
-    #
-    # def sorted_uniq_pages
-    #   pages.sort_by(&:uniq_count)
-    # end
   end
 end
