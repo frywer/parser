@@ -3,6 +3,8 @@
 module Parser
   # Prints log views
   class Print
+    attr_reader :log_file
+
     def initialize(log_path)
       @log_file = LogFile.new log_path
     end
@@ -37,6 +39,7 @@ module Parser
 
     def parsed_file
       @log_file.parse!
+      @log_file
     end
 
     def pages

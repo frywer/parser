@@ -4,6 +4,10 @@ require_relative 'lib/parser'
 
 log_file = Parser::Print.new(ARGV[0])
 print "---MOST VIEWS---\n"
-log_file.most_views
+log_file.print_most_views
 print "---UNIQ VIEWS---\n"
-log_file.uniq_views
+log_file.print_uniq_views
+if log_file.log_file.errors.any?
+  print "---Errors---\n"
+  log_file.print_errors
+end
