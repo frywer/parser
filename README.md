@@ -51,6 +51,11 @@ Run the script by passing in the path of the server logs you would like to parse
 $ ruby ./parser.rb webserver.log
 ```
 
+The first argument is optional and you can skip it. Default path is APP/ROOT/webserver.log
+```
+$ ruby ./parser.rb
+```
+
 Output of valid file:
 
 ```
