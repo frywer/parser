@@ -2,7 +2,7 @@
 
 ##Ruby Developer Test
 
-Application parses log file and filtering pages by most views, uniq views. It:
+The application parse a log file and filtering pages by most views, unique views. We also decided to add the possibility to filter by website visitor activity because it can be helpful for marketing. The application:
 
 * Use OOP principles;
 * Use Rspec for testing;
