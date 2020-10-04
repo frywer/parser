@@ -1,5 +1,4 @@
 ![Smart Logo](smart-logo.png)
-#
 
 ##Ruby Developer Test
 
