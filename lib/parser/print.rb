@@ -21,6 +21,12 @@ module Parser
       end
     end
 
+    def print_visitor_activities
+      visitor_activities.each do |visitor|
+        print "#{visitor.ip_address} #{visitor.activities_count} activities\n"
+      end
+    end
+
     def print_errors
       @log_file.errors.each do |error|
         print error
@@ -37,6 +43,10 @@ module Parser
       pages.sort_by(&:count).reverse
     end
 
+    def visitor_activities
+      visitors.sort_by(&:activities_count).reverse
+    end
+
     def parsed_file
       @log_file.parse!
       @log_file
@@ -44,6 +54,10 @@ module Parser
 
     def pages
       @pages ||= parsed_file.pages
+    end
+
+    def visitors
+      @log_file.visitors
     end
   end
 end

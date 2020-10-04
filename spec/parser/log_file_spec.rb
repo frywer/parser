@@ -67,4 +67,19 @@ RSpec.describe Parser::LogFile do
       expect(log_file.pages.count).to eq 2
     end
   end
+
+  describe '#visitors' do
+    let(:log_file_rows) do
+      ["/about 802.683.925.780\n",
+       "/about 802.683.925.780\n",
+       "/about/2 543.910.244.929\n",
+       "/home 543.910.244.929\n",
+       "/about 543.910.244.929\n"]
+    end
+
+    it 'returns visitors count' do
+      log_file.parse
+      expect(log_file.visitors.count).to eq 2
+    end
+  end
 end

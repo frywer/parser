@@ -34,5 +34,11 @@ module Parser
                  .group_by(&:page)
                  .map { |page, views| Page.new(page, views) }
     end
+
+    def visitors
+      @visitors ||= @views
+                    .group_by(&:ip_address)
+                    .map { |ip_address, views| Visitor.new(ip_address, views) }
+    end
   end
 end

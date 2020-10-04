@@ -1,39 +1,12 @@
 ![Smart Logo](smart-logo.png)
+#
 #Ruby Developer Test
-Application parses log file and filtering pages by most views, uniq views. It:
+
+#####Application parses log file and filtering pages by most views, uniq views. It:
 
 * Use OOP principles;
-* Use Rspec for testing
+* Use Rspec for testing;
 * (100.0%) covered with specs;
-
-### Running tests
-Parser App uses [Rspec](https://github.com/rspec/rspec) as test framework, and [Rubocop](https://github.com/rubocop-hq/rubocop) as a code analyzer.
-
-Run `$ bundle install` before testing to make sure you have installed all necessary gems. 
-
-* Running all tests:
-```bash
-$ rspec
-```
-
-* Running tests for an specific file:
-```bash
-$ rspec /spec/parser/log_file_spec.rb
-```
-
-* Running a specific test:
-```bash
-$ rspec /spec/parser/log_file_spec.rb:20
-```
-
-* Running linter:
-```bash
-$ rubocop
-```
-* running all together (rspec&rubocop)
-```bash
-$ rake tests
-```
 
 ## Getting started
 
@@ -59,7 +32,7 @@ The first argument is optional and you can skip it. Default path is APP/ROOT/web
 ```
 $ ruby ./parser.rb
 ```
-Alternative way running script is using rake command:
+Alternative way running script is using `$ rake` command:
 
 ```
 $ rake parse path=webserver.log
@@ -75,6 +48,7 @@ Output of valid file:
 /about 81 visits
 /help_page/1 80 visits
 /home 78 visits
+
 ---UNIQ VIEWS---
 /index 23 unique views
 /home 23 unique views
@@ -82,6 +56,12 @@ Output of valid file:
 /help_page/1 23 unique views
 /about/2 22 unique views
 /about 21 unique views
+
+---VISITOR ACTIVITIES---
+158.577.775.616 31 activities
+722.247.931.582 31 activities
+451.106.204.921 29 activities
+184.123.665.067 29 activities
 ```
 
 Output with some invalid rows:
@@ -103,6 +83,12 @@ Output with some invalid rows:
 /about/2 22 unique views
 /about 21 unique views
 
+---VISITOR ACTIVITIES---
+158.577.775.616 31 activities
+722.247.931.582 31 activities
+451.106.204.921 29 activities
+184.123.665.067 29 activities
+
 ---Found 4 Errors---
 Invalid row: /about invalid 722.247.931.582
 Invalid row: /index
@@ -110,3 +96,32 @@ Invalid row: /about / / /  802.683.925.780
 Invalid row: /home  ___ 451.106.204.921
 ```
 The output by default is ordered from most pages views to less page views.
+
+## Running tests
+Parser Application uses [Rspec](https://github.com/rspec/rspec) as test framework, and [Rubocop](https://github.com/rubocop-hq/rubocop) as a code analyzer.
+
+Run `$ bundle install` before testing to make sure you have installed all necessary gems. 
+
+* Running all tests:
+```bash
+$ rspec
+```
+
+* Running tests for an specific file:
+```bash
+$ rspec spec/parser/log_file_spec.rb
+```
+
+* Running a specific test:
+```bash
+$ rspec spec/parser/log_file_spec.rb:20
+```
+
+* Running linter:
+```bash
+$ rubocop
+```
+* running all together (rspec&rubocop)
+```bash
+$ rake tests
+```

@@ -15,8 +15,16 @@ RSpec.describe Parser::Print do
                        Parser::View.new('/index 543.910.244.929')])]
   end
 
+  let(:visitors) do
+    [Parser::Visitor.new('722.247.931.582',
+                         [Parser::View.new('/about 722.247.931.582')]),
+     Parser::Visitor.new('543.910.244.929',
+                         [Parser::View.new('/index 543.910.244.929'),
+                          Parser::View.new('/index 543.910.244.929')])]
+  end
+
   before do
-    allow(parser).to receive(:pages).and_return(pages)
+    allow(parser).to receive_messages(pages: pages, visitors: visitors)
   end
 
   describe '#print_most_views' do
@@ -28,6 +36,13 @@ RSpec.describe Parser::Print do
   describe '#print_uniq_views' do
     it 'prints uniq views' do
       expect { parser.print_uniq_views }.to output("/index 2 unique views\n/about 1 unique views\n").to_stdout
+    end
+  end
+
+  describe '#print_visitor_activities' do
+    it 'prints uniq views' do
+      expect { parser.print_visitor_activities }
+        .to output("543.910.244.929 2 activities\n722.247.931.582 1 activities\n").to_stdout
     end
   end
 
