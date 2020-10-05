@@ -10,16 +10,18 @@ module Parser
       @views = views
     end
 
-    def uniq_views
-      @views.uniq(&:ip_address)
-    end
-
     def count
       @views.count
     end
 
     def uniq_count
       uniq_views.count
+    end
+
+    private
+
+    def uniq_views
+      @views.uniq(&:ip_address)
     end
   end
 end

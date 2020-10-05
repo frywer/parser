@@ -13,7 +13,7 @@ RSpec.describe Parser::Page do
 
   describe '#uniq_views' do
     it 'returns uniq views views' do
-      expect(page.uniq_views.map(&:ip_address)).to match_array ['802.683.925.780', '336.284.013.698']
+      expect(page.send(:uniq_views).map(&:ip_address)).to match_array ['802.683.925.780', '336.284.013.698']
     end
   end
 

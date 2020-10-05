@@ -12,6 +12,8 @@ The application parse a log file and filtering pages by most views, unique views
 
 Parser 1.0 was tested with ruby 2.7.1.
 
+Run `$ bundle install` before testing to make sure you have installed all necessary gems.
+
 * Clone or [download](https://github.com/frywer/parser/archive/main.zip) this repo
 ```
 $ git clone https://github.com/frywer/parser.git
@@ -125,3 +127,11 @@ $ rubocop
 ```bash
 $ rake tests
 ```
+
+## Developer notes
+
+* `LogFile` parse logs, initialize pages and visitors objects, stores errors.
+* `View` parse the row from the log file, splits the ip and page to a separate methods, validates rows
+* `Page` stores all and uniq views of the page
+* `Visitor` Stores all activities of the ip address
+* `Print` Prints the result
