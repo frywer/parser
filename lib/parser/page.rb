@@ -3,15 +3,12 @@
 module Parser
   # Initialize Page object
   class Page
-    attr_reader :name
+    attr_reader :name, :count
 
     def initialize(name, views)
       @name = name
       @views = views
-    end
-
-    def count
-      @views.count
+      @count = @views.count
     end
 
     def uniq_count
