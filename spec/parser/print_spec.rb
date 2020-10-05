@@ -6,21 +6,21 @@ RSpec.describe Parser::Print do
   let(:parser) { described_class.new('/file_path') }
 
   let(:pages) do
-    [Parser::Page.new('/about',
-                      [Parser::View.new('/about 722.247.931.582'),
-                       Parser::View.new('/about 722.247.931.582'),
-                       Parser::View.new('/about 722.247.931.582')]),
-     Parser::Page.new('/index',
-                      [Parser::View.new('/index 722.247.931.582'),
-                       Parser::View.new('/index 543.910.244.929')])]
+    [Parser::LogFiles::Page.new('/about',
+                                [Parser::View.new('/about 722.247.931.582'),
+                                 Parser::View.new('/about 722.247.931.582'),
+                                 Parser::View.new('/about 722.247.931.582')]),
+     Parser::LogFiles::Page.new('/index',
+                                [Parser::View.new('/index 722.247.931.582'),
+                                 Parser::View.new('/index 543.910.244.929')])]
   end
 
   let(:visitors) do
-    [Parser::Visitor.new('722.247.931.582',
-                         [Parser::View.new('/about 722.247.931.582')]),
-     Parser::Visitor.new('543.910.244.929',
-                         [Parser::View.new('/index 543.910.244.929'),
-                          Parser::View.new('/index 543.910.244.929')])]
+    [Parser::LogFiles::Visitor.new('543.910.244.929',
+                                   [Parser::View.new('/index 543.910.244.929'),
+                                    Parser::View.new('/index 543.910.244.929')]),
+     Parser::LogFiles::Visitor.new('722.247.931.582',
+                                   [Parser::View.new('/about 722.247.931.582')])]
   end
 
   before do

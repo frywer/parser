@@ -32,13 +32,17 @@ module Parser
     def pages
       @pages ||= @views
                  .group_by(&:page)
-                 .map { |page, views| Page.new(page, views) }
+                 .map { |page, views| LogFiles::Page.new(page, views) }
+                 .sort_by(&:count)
+                 .reverse
     end
 
     def visitors
       @visitors ||= @views
                     .group_by(&:ip_address)
-                    .map { |ip_address, views| Visitor.new(ip_address, views) }
+                    .map { |ip_address, views| LogFiles::Visitor.new(ip_address, views) }
+                    .sort_by(&:count)
+                    .reverse
     end
   end
 end

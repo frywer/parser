@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../spec_helper'
+require_relative '../../spec_helper'
 
-RSpec.describe Parser::Page do
+RSpec.describe Parser::LogFiles::Page do
   let(:views) do
     [Parser::View.new('/about 802.683.925.780'),
      Parser::View.new('/about 802.683.925.780'),

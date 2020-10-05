@@ -10,7 +10,7 @@ module Parser
     end
 
     def print_most_views
-      most_views.each do |page|
+      pages.each do |page|
         print "#{page.name} #{page.count} visits\n"
       end
     end
@@ -22,8 +22,8 @@ module Parser
     end
 
     def print_visitor_activities
-      visitor_activities.each do |visitor|
-        print "#{visitor.ip_address} #{visitor.activities_count} activities\n"
+      visitors.each do |visitor|
+        print "#{visitor.name} #{visitor.count} activities\n"
       end
     end
 
@@ -37,14 +37,6 @@ module Parser
 
     def uniq_views
       pages.sort_by(&:uniq_count).reverse
-    end
-
-    def most_views
-      pages.sort_by(&:count).reverse
-    end
-
-    def visitor_activities
-      visitors.sort_by(&:activities_count).reverse
     end
 
     def parsed_file
