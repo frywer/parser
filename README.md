@@ -12,8 +12,6 @@ The application parse a log file and filtering pages by most views, unique views
 
 Parser 1.0 was tested with ruby 2.7.1.
 
-Run `$ bundle install` before testing to make sure you have installed all necessary gems.
-
 * Clone or [download](https://github.com/frywer/parser/archive/main.zip) this repo
 ```
 $ git clone https://github.com/frywer/parser.git
@@ -22,6 +20,11 @@ $ git clone https://github.com/frywer/parser.git
 Move to the project root
 ```
 $ cd parser
+```
+
+Make sure you have installed all necessary gems and then
+```
+$ bundle install
 ```
 
 Run the script by passing in the path of the server logs you would like to parse
